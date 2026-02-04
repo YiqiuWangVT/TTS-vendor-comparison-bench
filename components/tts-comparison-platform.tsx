@@ -8,17 +8,26 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles, TimerReset } from "lucide-react"
 import { useI18n } from "@/components/i18n-provider"
 import { cn } from "@/lib/utils"
+import { getProviderLabel } from "@/lib/providers"
 
 export interface TTSConfig {
   text: string
   language: string
   providers: string[]
-  models: Record<string, string>
-  voices: Record<string, string>
+  configurations: TTSConfiguration[]
+}
+
+export interface TTSConfiguration {
+  id: string // unique id for each configuration
+  provider: string
+  model: string
+  voice: string
 }
 
 export interface TTSResult {
   provider: string
+  configId: string // unique identifier for this specific configuration
+  configLabel: string // display label like "豆包火山 #1", "豆包火山 #2"
   metrics: {
     frontend: { ttfbMs: number }
     backend: { ttfbMs: number }
@@ -36,8 +45,7 @@ export function TTSComparisonPlatform() {
     text: "",
     language: "zh-CN",
     providers: [],
-    models: {},
-    voices: {},
+    configurations: [],
   })
 
   const [results, setResults] = useState<TTSResult[]>([])
@@ -93,21 +101,37 @@ export function TTSComparisonPlatform() {
     // Prefer the live textarea value (if present) to avoid a race where
     // a user types and immediately clicks Start before React state updates.
     const currentText = textAreaElement?.value ?? config.text
-    if (!currentText.trim() || config.providers.length === 0) {
+    if (!currentText.trim() || config.configurations.length === 0) {
       return
     }
 
   setIsRunning(true)
 
-    const initialResults: TTSResult[] = config.providers.map((provider) => ({
-      provider,
-      metrics: {
-        frontend: { ttfbMs: 0 },
-        backend: { ttfbMs: 0 },
-      },
-      audioUrl: "",
-      status: "pending",
-    }))
+    // Get provider configurations for label generation
+    const getProviderConfigCount = (providerId: string) => {
+      return config.configurations.filter(c => c.provider === providerId).length
+    }
+
+    const getProviderConfigIndex = (configId: string) => {
+      const providerConfigs = config.configurations.filter(c => c.provider === config.configurations.find(cf => cf.id === configId)?.provider)
+      return providerConfigs.findIndex(c => c.id === configId) + 1
+    }
+
+    const initialResults: TTSResult[] = config.configurations.map((configItem) => {
+      const providerLabel = getProviderLabel(configItem.provider)
+      const configIndex = getProviderConfigIndex(configItem.id)
+      return {
+        provider: configItem.provider,
+        configId: configItem.id,
+        configLabel: `${providerLabel} #${configIndex}`,
+        metrics: {
+          frontend: { ttfbMs: 0 },
+          backend: { ttfbMs: 0 },
+        },
+        audioUrl: "",
+        status: "pending",
+      }
+    })
 
     setResults(initialResults)
 
@@ -117,7 +141,9 @@ export function TTSComparisonPlatform() {
 
     try {
       await Promise.allSettled(
-        config.providers.map((provider) => runProviderComparison(provider, effectiveConfig, setResults)),
+        config.configurations.map((configItem) =>
+          runConfigurationComparison(configItem, effectiveConfig, setResults)
+        ),
       )
     } finally {
       setIsRunning(false)
@@ -137,7 +163,7 @@ export function TTSComparisonPlatform() {
 
   const handlePanelStart = useCallback(async () => {
     const currentText = textAreaElement?.value ?? config.text
-    if (!currentText.trim() || config.providers.length === 0) {
+    if (!currentText.trim() || config.configurations.length === 0) {
       triggerSpotlight("panel")
       scrollToRef(configSectionRef)
       return
@@ -147,7 +173,7 @@ export function TTSComparisonPlatform() {
     triggerSpotlight("results", 1500)
     await handleStartComparison()
     triggerSpotlight("results", 1500)
-  }, [config.providers.length, config.text, handleStartComparison, scrollToRef, triggerSpotlight, textAreaElement])
+  }, [config.configurations.length, config.text, handleStartComparison, scrollToRef, triggerSpotlight, textAreaElement])
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -238,8 +264,8 @@ export function TTSComparisonPlatform() {
   )
 }
 
-async function runProviderComparison(
-  provider: string,
+async function runConfigurationComparison(
+  configuration: TTSConfiguration,
   config: TTSConfig,
   setResults: (updater: (prev: TTSResult[]) => TTSResult[]) => void,
 ) {
@@ -249,14 +275,15 @@ async function runProviderComparison(
   const requestBody = {
     text: config.text,
     language: config.language,
-    providers: [provider],
-    models: config.models[provider] ? { [provider]: config.models[provider] } : undefined,
-    voices: config.voices[provider] ? { [provider]: config.voices[provider] } : undefined,
+    providers: [configuration.provider],
+    models: { [configuration.provider]: configuration.model },
+    voices: { [configuration.provider]: configuration.voice },
   }
-  // Debug: log the text being sent for this provider to help diagnose stale-text issues
+
+  // Debug log
   try {
     // eslint-disable-next-line no-console
-    console.debug(`[client] runProviderComparison -> provider=${provider} text=`, requestBody.text)
+    console.debug(`[client] runConfigurationComparison -> provider=${configuration.provider} model=${configuration.model} voice=${configuration.voice}`)
   } catch {}
 
   try {
@@ -277,19 +304,19 @@ async function runProviderComparison(
     const data = await response.json()
     const endTime = Math.round(performance.now() - startTime)
 
-  const backendResult = data?.results?.find((r: TTSResult) => r.provider === provider)
+    const backendResult = data?.results?.find((r: TTSResult) => r.provider === configuration.provider)
     if (!backendResult) {
       throw new Error("No result returned for provider")
     }
 
     setResults((prev) =>
       prev.map((result) => {
-        if (result.provider !== provider) {
+        if (result.configId !== configuration.id) {
           return result
         }
 
         return {
-          provider,
+          ...result,
           metrics: {
             frontend: {
               ttfbMs: frontendTTFB ?? endTime,
@@ -309,8 +336,8 @@ async function runProviderComparison(
     const elapsed = Math.round(performance.now() - startTime)
     setResults((prev) =>
       prev.map((result) =>
-        result.provider === provider
-              ? {
+        result.configId === configuration.id
+          ? {
               ...result,
               status: "error",
               error: error instanceof Error ? error.message : "Unknown error",

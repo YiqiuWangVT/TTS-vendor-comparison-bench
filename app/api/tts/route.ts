@@ -186,10 +186,10 @@ const PROVIDER_HANDLERS: Record<ProviderId, ProviderHandler> = {
   minimax: processMinimaxTTS,
   luna: processLunaTTS,
   qwen: processQwenTTS,
-  elevenlabs: async (text: string, options: any, startTime: number) => {
+  elevenlabs: async (_text: string, _options: ProviderOptions, _startTime: number) => {
     throw new Error("ElevenLabs TTS is currently unavailable")
   },
-  siliconflow: async (text: string, options: any, startTime: number) => {
+  siliconflow: async (_text: string, _options: ProviderOptions, _startTime: number) => {
     throw new Error("SiliconFlow TTS is currently unavailable")
   },
 }

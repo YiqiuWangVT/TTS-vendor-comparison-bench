@@ -220,7 +220,7 @@ export function ResultsDisplay({ results, isRunning, columns, onSetColumns, clas
           >
             {results.map((result) => (
               <Card
-                key={result.provider}
+                key={result.configId || result.provider}
                 stretch={false}
                 className="glass-panel flex  flex-col  rounded-3xl border border-white/10 bg-white/[0.03] shadow-none"
               >
@@ -229,9 +229,14 @@ export function ResultsDisplay({ results, isRunning, columns, onSetColumns, clas
                     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
                       {getStatusIcon(result.status)}
                     </div>
-                    <CardTitle className="text-base font-semibold tracking-tight text-foreground">
-                      {getProviderLabel(result.provider)}
-                    </CardTitle>
+                    <div className="flex flex-col">
+                      <CardTitle className="text-base font-semibold tracking-tight text-foreground">
+                        {result.configLabel || getProviderLabel(result.provider)}
+                      </CardTitle>
+                      {result.configLabel && (
+                        <span className="text-xs text-foreground/50">{getProviderLabel(result.provider)}</span>
+                      )}
+                    </div>
                   </div>
                   {getStatusBadge(result.status)}
                 </CardHeader>
@@ -258,8 +263,8 @@ export function ResultsDisplay({ results, isRunning, columns, onSetColumns, clas
                           audioUrl={result.audioUrl}
                           audioMimeType={result.audioMimeType}
                           provider={result.provider}
-                          isActive={activePlayer === result.provider || activePlayer === null}
-                          onPlayStateChange={(isPlaying) => handlePlayerStateChange(result.provider, isPlaying)}
+                          isActive={activePlayer === result.configId || activePlayer === null}
+                          onPlayStateChange={(isPlaying) => handlePlayerStateChange(result.configId, isPlaying)}
                           text={text}
                         />
                       </div>
