@@ -86,7 +86,11 @@ export function ConfigurationPanel({
     const newVoices = { ...(config.voices || {}) }
 
     if (!newModels[providerId] && providerModels.length > 0) {
-      newModels[providerId] = providerModels[0].value
+      // Filter out lunalabs0 for Luna provider
+      const availableModels = providerId === 'luna'
+        ? providerModels.filter(m => m.value !== 'lunalabs0')
+        : providerModels
+      newModels[providerId] = availableModels[0]?.value || providerModels[0].value
     }
 
     if (!newVoices[providerId] && providerVoices.length > 0) {
@@ -258,7 +262,7 @@ export function ConfigurationPanel({
                       ? DOUYIN_LLM_VOICE_OPTIONS
                       : VOICE_OPTIONS.douyin || []
                     : provider.id === "luna"
-                      ? selectedModel === "lunalabs1"
+                      ? selectedModel === "lunalabs0"
                         ? VOICE_OPTIONS.luna?.filter(v =>
                             ["female", "male", "child", "youngmale", "youngfemale"].includes(v.value)
                           ) || []
@@ -308,17 +312,17 @@ export function ConfigurationPanel({
                             <Label className="text-xs uppercase tracking-wider text-foreground/50">{t("config.model.label")}</Label>
                             {providerModels.length > 0 ? (
                               <Select
-                                value={(config.models || {})[provider.id] || providerModels[0]?.value}
+                                value={(config.models || {})[provider.id] || (provider.id === 'luna' ? 'lunalabs1' : providerModels[0]?.value)}
                                 onValueChange={(value) => {
                                   const newModels = { ...(config.models || {}), [provider.id]: value }
                                   const availableVoices =
                                     provider.id === "douyin" && value === "volcano_llm"
                                       ? DOUYIN_LLM_VOICE_OPTIONS
-                                      : provider.id === "luna" && value === "lunalabs1"
+                                      : provider.id === "luna" && value === "lunalabs0"
                                         ? VOICE_OPTIONS.luna?.filter(v =>
                                             ["female", "male", "child", "youngmale", "youngfemale"].includes(v.value)
                                           ) || []
-                                        : provider.id === "luna" && value === "luna2"
+                                        : provider.id === "luna" && value === "lunalabs1"
                                           ? VOICE_OPTIONS.luna?.filter(v =>
                                               !["female", "male", "child", "youngmale", "youngfemale"].includes(v.value)
                                             ) || []
@@ -337,7 +341,7 @@ export function ConfigurationPanel({
                                   <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent className="border border-white/10 bg-slate-950/95 text-foreground">
-                                  {providerModels.map((model) => (
+                                  {providerModels.filter((model) => model.value !== 'lunalabs0').map((model) => (
                                     <SelectItem key={model.value} value={model.value}>
                                       {model.label}
                                     </SelectItem>

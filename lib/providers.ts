@@ -52,8 +52,8 @@ export const PROVIDER_MODELS: Record<ProviderId, OptionItem[]> = {
     { value: "eleven_flash_v2", label: "Flash V2" },
   ],
   luna: [
-    { value: "lunalabs1", label: "LunaTTS1" },
-    { value: "luna2", label: "LunaTTS2" }
+    { value: "lunalabs0", label: "LunaTTS0" },
+    { value: "lunalabs1", label: "LunaTTS1" }
   ],
   qwen: [
     { value: "qwen3-tts-flash", label: "qwen3-tts-flash" },
@@ -200,13 +200,13 @@ export const VOICE_OPTIONS: Record<ProviderId, OptionItem[]> = {
     { value: "Serene_Woman", label: "Serene Woman (Serene_Woman) — English" },
   ],
   luna: [
-    // LunaTTS1 音色
+    // LunaTTS0 音色 (formerly LunaTTS1)
     { value: "female", label: "Female" },
     { value: "male", label: "Male" },
     { value: "child", label: "Child" },
     { value: "youngmale", label: "Young Male" },
     { value: "youngfemale", label: "Young Female" },
-    // LunaTTS2 音色 - 中文
+    // LunaTTS1 音色 (formerly LunaTTS2) - 中文
     { value: "jingcheng", label: "播客景澄 (温和男青年)" },
     { value: "bochuan", label: "柏川FM (开朗男青年)" },
     { value: "zhining", label: "播客芷宁 (知性女青年)" },
@@ -226,7 +226,7 @@ export const VOICE_OPTIONS: Record<ProviderId, OptionItem[]> = {
     { value: "xiyue", label: "曦月 (傲娇女友)" },
     { value: "ruoxi", label: "若兮 (粘人小妹妹)" },
     { value: "bochen", label: "柏辰 (温柔男友)" },
-    // LunaTTS2 音色 - 英文
+    // LunaTTS1 音色 (formerly LunaTTS2) - 英文
     { value: "michael", label: "Michael (美国男青年)" },
     { value: "james", label: "James (优雅英音男)" },
     { value: "grace", label: "Grace (优雅英音女)" },

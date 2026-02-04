@@ -784,12 +784,12 @@ async function processLunaTTS(
 ): Promise<TTSProviderResult> {
   const model = options.model || "standard"
 
-  // If LunaTTS2 model, use the new API
-  if (model === "luna2") {
+  // If LunaTTS1 model (formerly LunaTTS2), use the new API
+  if (model === "lunalabs1") {
     return await processLunaTTS2(text, options, startTime)
   }
 
-  // LunaTTS1 processing
+  // LunaTTS0 processing (formerly LunaTTS1)
   const endpoint = "https://demo.lunalabs.cn/api/lunaTTS/tts"
   const token = process.env.LUNA_ACCESS_TOKEN
 
