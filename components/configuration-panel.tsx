@@ -192,8 +192,8 @@ export function ConfigurationPanel({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="border border-white/10 bg-slate-950/95">
-                  <SelectItem value="zh-CN">中文</SelectItem>
-                  <SelectItem value="en-US">English</SelectItem>
+                  <SelectItem value="zh">中文</SelectItem>
+                  <SelectItem value="en">English</SelectItem>
                 </SelectContent>
               </Select>
             </div>
