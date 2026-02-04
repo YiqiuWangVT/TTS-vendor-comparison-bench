@@ -294,7 +294,8 @@ export function ResultsDisplay({ results, isRunning, columns, onSetColumns, clas
           </div>
         </div>
 
-        {results.some((r) => r.status === "success") && (
+        {/* Performance comparison table hidden */}
+        {/* results.some((r) => r.status === "success") && (
           <Card
             compact
             stretch={false}
@@ -311,7 +312,7 @@ export function ResultsDisplay({ results, isRunning, columns, onSetColumns, clas
               </div>
             </CardContent>
           </Card>
-        )}
+        ) */}
       </div>
     </section>
   )
