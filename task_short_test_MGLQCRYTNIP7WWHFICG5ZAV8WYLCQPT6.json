@@ -1,0 +1,14 @@
+{
+    "task_id": "MGLQCRYTNIP7WWHFICG5ZAV8WYLCQPT6",
+    "output": {
+        "file_url": "https://gitee-ai.su.bcebos.com/serverless-api/2025-11-05/MGLQCRYTNIP7WWHFICG5ZAV8WYLCQPT6.wav?authorization=bce-auth-v1%2FALTAKZc1TWR1oEpkHMlwBs5YXU%2F2025-11-05T05%3A44%3A00Z%2F604800%2F%2F2e4c08ed4e6e75b9a58ceeb064bb764801ff7d6fe5c2d13fccd2dcfa2a75cbc2"
+    },
+    "status": "success",
+    "created_at": 1762321432451,
+    "started_at": 1762321432832,
+    "completed_at": 1762321440701,
+    "urls": {
+        "get": "https://ai.gitee.com/api/v1/task/MGLQCRYTNIP7WWHFICG5ZAV8WYLCQPT6",
+        "cancel": "https://ai.gitee.com/api/v1/task/MGLQCRYTNIP7WWHFICG5ZAV8WYLCQPT6/cancel"
+    }
+}

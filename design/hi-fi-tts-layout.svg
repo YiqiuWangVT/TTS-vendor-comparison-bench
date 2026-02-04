@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2200" viewBox="0 0 1600 2200">
+  <style>
+    .bg{fill:#f6f8fb}
+    .panel{fill:#fff;stroke:#e6eef6;stroke-width:2;rx:12}
+    .header{fill:#0f172a;color:#fff}
+    .title{font-family:Inter, Arial, sans-serif;font-size:28px;font-weight:700;fill:#0b1220}
+    .label{font-family:Inter, Arial, sans-serif;font-size:16px;fill:#334155}
+    .muted{font-family:Inter, Arial, sans-serif;font-size:14px;fill:#64748b}
+    .btn{fill:#0ea5ff;stroke:#0891b2;rx:8}
+    .btn-alt{fill:#eef2ff;stroke:#bfdbfe;rx:8}
+    .iconbtn{fill:#fff;stroke:#cbd5e1;rx:8}
+    .chip{fill:#f1f5f9;stroke:#e2e8f0;rx:18}
+    .num{font-family:Inter, Arial, sans-serif;font-size:12px;fill:#fff}
+    .num-bg{fill:#111827}
+  </style>
+  <rect width="1600" height="2200" class="bg" />
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1600" height="96" fill="#eef2ff" stroke="#e6eef6" />
+  <text x="40" y="62" class="title">TTS Vendor Comparison</text>
+  <g transform="translate(1260,24)">
+    <rect x="0" y="16" width="120" height="56" class="btn" />
+    <text x="20" y="54" class="label" fill="#fff">Run ▶</text>
+  </g>
+
+  <!-- Top controls container -->
+  <rect x="40" y="128" width="1520" height="160" rx="12" fill="#fff" stroke="#e6eef6" />
+  <text x="64" y="164" class="label">Text Input</text>
+  <!-- big textarea -->
+  <rect x="64" y="178" width="1040" height="92" rx="10" fill="#fbfdff" stroke="#e6eef6" />
+  <text x="82" y="232" class="muted">Type or paste the sample text here...</text>
+
+  <!-- Providers vertical preview to the right of textarea -->
+  <text x="1120" y="164" class="label">Providers</text>
+  <g>
+    <rect x="1120" y="178" width="440" height="40" class="chip" />
+    <text x="1148" y="206" class="label">Douyin · Volcano TTS</text>
+    <rect x="1520" y="186" width="40" height="28" class="iconbtn" />
+    <rect x="1120" y="226" width="440" height="40" class="chip" />
+    <text x="1148" y="254" class="label">Minimax · speech-2.5-hd</text>
+    <rect x="1520" y="234" width="40" height="28" class="iconbtn" />
+    <rect x="1120" y="274" width="440" height="40" class="chip" />
+    <text x="1148" y="302" class="label">ElevenLabs · multilingual_v2</text>
+    <rect x="1520" y="282" width="40" height="28" class="iconbtn" />
+  </g>
+
+  <!-- Quick actions row under top controls -->
+  <g>
+    <rect x="64" y="306" width="220" height="48" class="btn-alt" />
+    <text x="90" y="338" class="label">Random sample</text>
+
+    <rect x="300" y="306" width="160" height="48" class="btn-alt" />
+    <text x="336" y="338" class="label">Clear</text>
+
+    <rect x="1320" y="306" width="120" height="48" class="btn" />
+    <text x="1348" y="338" class="label" fill="#fff">Start</text>
+  </g>
+
+  <!-- Providers full list below top controls (per-row detailed) -->
+  <text x="40" y="400" class="title">Providers (detailed rows)</text>
+
+  <!-- Row 1 -->
+  <rect x="40" y="420" width="1520" height="92" rx="12" fill="#fff" stroke="#e6eef6" />
+  <text x="64" y="456" class="label">Douyin</text>
+  <text x="260" y="456" class="muted">Model: Volcano TTS</text>
+  <text x="520" y="456" class="muted">Voice: Female Young</text>
+  <text x="960" y="456" class="muted">Latency: 120ms</text>
+  <rect x="1300" y="434" width="88" height="44" class="btn-alt" />
+  <text x="1320" y="462" class="label">Settings</text>
+  <rect x="1410" y="444" width="120" height="28" class="btn" />
+  <text x="1436" y="462" class="label" fill="#fff">Enable</text>
+
+  <!-- Row 2 -->
+  <rect x="40" y="532" width="1520" height="92" rx="12" fill="#fff" stroke="#e6eef6" />
+  <text x="64" y="568" class="label">Minimax</text>
+  <text x="260" y="568" class="muted">Model: speech-2.5-hd-preview</text>
+  <text x="520" y="568" class="muted">Voice: Boyan</text>
+  <text x="960" y="568" class="muted">Size: 98KB</text>
+  <rect x="1300" y="546" width="88" height="44" class="btn-alt" />
+  <text x="1320" y="574" class="label">Settings</text>
+  <rect x="1410" y="556" width="120" height="28" class="btn" />
+  <text x="1436" y="574" class="label" fill="#fff">Enable</text>
+
+  <!-- Row 3 -->
+  <rect x="40" y="644" width="1520" height="92" rx="12" fill="#fff" stroke="#e6eef6" />
+  <text x="64" y="680" class="label">ElevenLabs</text>
+  <text x="260" y="680" class="muted">Model: multilingual_v2</text>
+  <text x="520" y="680" class="muted">Voice: Rachel</text>
+  <text x="960" y="680" class="muted">Quality: High</text>
+  <rect x="1300" y="656" width="88" height="44" class="btn-alt" />
+  <text x="1320" y="684" class="label">Settings</text>
+  <rect x="1410" y="666" width="120" height="28" class="btn" />
+  <text x="1436" y="684" class="label" fill="#fff">Enable</text>
+
+  <!-- Results header & columns control -->
+  <text x="40" y="772" class="title">Results</text>
+  <g>
+    <rect x="1320" y="744" width="200" height="56" rx="8" fill="#fff" stroke="#e6eef6" />
+    <text x="1340" y="780" class="label">Columns</text>
+    <rect x="1436" y="756" width="40" height="40" rx="6" class="btn-alt" />
+    <text x="1448" y="784" class="muted">1</text>
+    <rect x="1488" y="756" width="40" height="40" rx="6" class="btn-alt" />
+    <text x="1500" y="784" class="muted">2</text>
+    <rect x="1538" y="756" width="40" height="40" rx="6" class="btn-alt" />
+    <text x="1550" y="784" class="muted">3</text>
+  </g>
+
+  <!-- Results examples: 1/2/3 columns -->
+  <!-- 1-column example -->
+  <text x="40" y="840" class="muted">1-column (mobile)</text>
+  <rect x="40" y="864" width="1520" height="160" rx="12" fill="#fff" stroke="#e6eef6" />
+  <!-- Play button (annotated) -->
+  <rect x="64" y="900" width="64" height="64" rx="12" fill="#fff" stroke="#0ea5ff" />
+  <text x="92" y="940" class="label">▸</text>
+  <text x="150" y="924" class="label">Douyin · Volcano TTS</text>
+  <text x="150" y="952" class="muted">Duration: 3.2s · Size: 120KB</text>
+  <!-- annotate button with number 1 -->
+  <circle cx="100" cy="860" r="18" class="num-bg" />
+  <text x="92" y="866" class="num">1</text>
+
+  <!-- 2-column example -->
+  <text x="40" y="1040" class="muted">2-columns (tablet)</text>
+  <rect x="40" y="1064" width="740" height="140" rx="12" fill="#fff" stroke="#e6eef6" />
+  <rect x="820" y="1064" width="740" height="140" rx="12" fill="#fff" stroke="#e6eef6" />
+  <rect x="64" y="1096" width="56" height="56" rx="10" fill="#fff" stroke="#0ea5ff" />
+  <text x="136" y="1124" class="label">Provider A · Model X</text>
+  <circle cx="96" cy="1048" r="18" class="num-bg" />
+  <text x="88" y="1054" class="num">2</text>
+
+  <!-- 3-column example -->
+  <text x="40" y="1220" class="muted">3-columns (desktop)</text>
+  <rect x="40" y="1244" width="480" height="120" rx="12" fill="#fff" stroke="#e6eef6" />
+  <rect x="540" y="1244" width="480" height="120" rx="12" fill="#fff" stroke="#e6eef6" />
+  <rect x="1040" y="1244" width="520" height="120" rx="12" fill="#fff" stroke="#e6eef6" />
+  <rect x="64" y="1268" width="56" height="56" rx="10" fill="#fff" stroke="#0ea5ff" />
+  <text x="136" y="1296" class="label">Provider A</text>
+  <circle cx="96" cy="1218" r="18" class="num-bg" />
+  <text x="88" y="1224" class="num">3</text>
+
+  <!-- Legend for annotated buttons -->
+  <rect x="40" y="1400" width="1520" height="340" rx="12" fill="#fff" stroke="#e6eef6" />
+  <text x="64" y="1444" class="title">Legend — button positions</text>
+  <text x="96" y="1480" class="label">1. Play button (per-result)</text>
+  <text x="96" y="1512" class="label">2. Result play (tablet layout)</text>
+  <text x="96" y="1544" class="label">3. Result play (desktop layout)</text>
+  <text x="96" y="1576" class="muted">Other controls: Settings, Enable, Columns, Random sample, Start</text>
+
+  <!-- Footer -->
+  <rect x="0" y="2030" width="1600" height="170" fill="#eef2ff" />
+  <text x="40" y="2068" class="muted">High fidelity mockup (annotated) — shows all interactive control positions</text>
+</svg>

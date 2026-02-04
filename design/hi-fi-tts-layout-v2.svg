@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2200" viewBox="0 0 1600 2200">
+  <defs>
+    <linearGradient id="soft" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="100%" stop-color="#f8fafc" stop-opacity="1" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="18" flood-color="#0b1220" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <style>
+    .bg{fill:#f6f8fb}
+    .container{fill:url(#soft)}
+    .card{fill:#ffffff;stroke:#e6eef6;stroke-width:1;rx:16}
+    .title{font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; font-size:28px; font-weight:700; fill:#0b1220}
+    .label{font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto; font-size:14px; fill:#334155}
+    .muted{font-family:Inter; font-size:13px; fill:#64748b}
+    .pill{fill:#f1f5f9;stroke:#e6eef6; rx:12}
+    .dropdown{fill:#fff; stroke:#e6eef6; rx:10}
+    .btnPrimary{fill:#007aff; rx:12}
+    .btnPrimaryText{fill:#fff; font-family:Inter; font-weight:600; font-size:16px}
+    .btnGhost{fill:#fff; stroke:#e6eef6; rx:10}
+    .chev{fill:#94a3b8}
+    .num-bg{fill:#111827}
+    .num{font-family:Inter; font-size:12px; fill:#fff}
+    .shadow{filter:url(#cardShadow)}
+  </style>
+
+  <rect width="1600" height="2200" class="bg" />
+
+  <!-- Header -->
+  <rect x="80" y="40" width="1440" height="96" rx="14" class="container shadow" />
+  <text x="120" y="96" class="title">TTS Vendor Comparison</text>
+  <text x="1390" y="96" class="muted">Account ▾</text>
+
+  <!-- Top controls card -->
+  <rect x="80" y="160" width="1440" height="220" class="card shadow" />
+  <text x="110" y="210" class="label">Text input</text>
+  <!-- Textarea (visual) -->
+  <rect x="110" y="226" width="980" height="106" class="dropdown" />
+  <text x="132" y="278" class="muted">Type or paste sample text…</text>
+
+  <!-- Inline dropdowns to the right of textarea -->
+  <text x="1110" y="210" class="label">Language</text>
+  <rect x="1110" y="226" width="200" height="44" class="dropdown" />
+  <text x="1136" y="256" class="label">zh-CN ▾</text>
+
+  <text x="1330" y="210" class="label">Quality</text>
+  <rect x="1330" y="226" width="190" height="44" class="dropdown" />
+  <text x="1356" y="256" class="label">High ▾</text>
+
+  <!-- Providers vertical but compact, with per-row dropdown for model/voice -->
+  <text x="110" y="356" class="label">Providers</text>
+
+  <!-- Provider Row 1 -->
+  <rect x="110" y="374" width="1410" height="72" rx="12" class="card shadow" />
+  <text x="134" y="418" class="label">Douyin</text>
+  <rect x="320" y="388" width="300" height="40" class="dropdown" />
+  <text x="340" y="414" class="muted">Volcano TTS ▾</text>
+  <rect x="640" y="388" width="240" height="40" class="dropdown" />
+  <text x="660" y="414" class="muted">Female Young ▾</text>
+  <rect x="940" y="392" width="120" height="36" class="btnGhost" />
+  <text x="956" y="418" class="muted">Latency: 120ms</text>
+  <rect x="1080" y="384" width="120" height="44" class="btnGhost" />
+  <text x="1100" y="412" class="label">Settings</text>
+  <rect x="1220" y="384" width="180" height="44" class="btnPrimary" />
+  <text x="1250" y="412" class="btnPrimaryText">Enable</text>
+
+  <!-- Provider Row 2 -->
+  <rect x="110" y="462" width="1410" height="72" rx="12" class="card shadow" />
+  <text x="134" y="506" class="label">Minimax</text>
+  <rect x="320" y="476" width="300" height="40" class="dropdown" />
+  <text x="340" y="502" class="muted">speech-2.5-hd-preview ▾</text>
+  <rect x="640" y="476" width="240" height="40" class="dropdown" />
+  <text x="660" y="502" class="muted">Boyan ▾</text>
+  <rect x="940" y="480" width="120" height="36" class="btnGhost" />
+  <text x="956" y="506" class="muted">Size: 98KB</text>
+  <rect x="1080" y="472" width="120" height="44" class="btnGhost" />
+  <text x="1100" y="500" class="label">Settings</text>
+  <rect x="1220" y="472" width="180" height="44" class="btnPrimary" />
+  <text x="1250" y="500" class="btnPrimaryText">Enable</text>
+
+  <!-- Provider Row 3 -->
+  <rect x="110" y="550" width="1410" height="72" rx="12" class="card shadow" />
+  <text x="134" y="594" class="label">ElevenLabs</text>
+  <rect x="320" y="564" width="300" height="40" class="dropdown" />
+  <text x="340" y="590" class="muted">multilingual_v2 ▾</text>
+  <rect x="640" y="564" width="240" height="40" class="dropdown" />
+  <text x="660" y="590" class="muted">Rachel ▾</text>
+  <rect x="940" y="568" width="120" height="36" class="btnGhost" />
+  <text x="956" y="594" class="muted">Quality: High</text>
+  <rect x="1080" y="560" width="120" height="44" class="btnGhost" />
+  <text x="1100" y="588" class="label">Settings</text>
+  <rect x="1220" y="560" width="180" height="44" class="btnGhost" />
+  <text x="1250" y="588" class="label">Disabled</text>
+
+  <!-- Actions row: Random, Columns control, Start (prominent) -->
+  <g>
+    <rect x="110" y="640" width="220" height="56" rx="12" class="btnGhost" />
+    <text x="156" y="678" class="label">Random sample</text>
+
+    <rect x="350" y="640" width="260" height="56" rx="12" class="btnGhost" />
+    <text x="390" y="678" class="label">Columns: 1 / 2 / 3</text>
+
+    <!-- Prominent Start button -->
+    <rect x="1220" y="640" width="300" height="64" rx="16" class="btnPrimary shadow" />
+    <text x="1390" y="684" class="btnPrimaryText">Start Comparison</text>
+
+    <!-- Annotated small numbers to show keyboard/button positions -->
+    <circle cx="1220" cy="600" r="20" class="num-bg" />
+    <text x="1214" y="606" class="num">1</text>
+    <circle cx="1390" cy="600" r="20" class="num-bg" />
+    <text x="1384" y="606" class="num">2</text>
+    <circle cx="1550" cy="600" r="20" class="num-bg" />
+    <text x="1544" y="606" class="num">3</text>
+  </g>
+
+  <!-- Results header -->
+  <text x="110" y="740" class="title">Results</text>
+  <text x="1400" y="740" class="muted">Showing 3 results</text>
+
+  <!-- Example results region (3 cards shown) -->
+  <rect x="110" y="770" width="1520" height="280" rx="16" class="card shadow" />
+  <!-- card 1 -->
+  <rect x="132" y="800" width="460" height="200" rx="12" class="card" />
+  <rect x="152" y="820" width="72" height="72" rx="12" class="dropdown" stroke="#007aff" />
+  <text x="190" y="854" class="label">Douyin · Volcano TTS</text>
+  <text x="190" y="882" class="muted">Duration: 3.2s · Latency: 120ms</text>
+  <!-- annotate play button as #4 -->
+  <circle cx="188" cy="772" r="18" class="num-bg" />
+  <text x="182" y="778" class="num">4</text>
+
+  <!-- card 2 -->
+  <rect x="632" y="800" width="460" height="200" rx="12" class="card" />
+  <rect x="652" y="820" width="72" height="72" rx="12" class="dropdown" />
+  <text x="690" y="854" class="label">Minimax · speech-2.5</text>
+  <text x="690" y="882" class="muted">Duration: 2.9s · Size: 98KB</text>
+  <circle cx="688" cy="772" r="18" class="num-bg" />
+  <text x="682" y="778" class="num">5</text>
+
+  <!-- card 3 -->
+  <rect x="1132" y="800" width="460" height="200" rx="12" class="card" />
+  <rect x="1152" y="820" width="72" height="72" rx="12" class="dropdown" />
+  <text x="1190" y="854" class="label">ElevenLabs · multilingual</text>
+  <text x="1190" y="882" class="muted">Duration: 3.4s · Quality: High</text>
+  <circle cx="1188" cy="772" r="18" class="num-bg" />
+  <text x="1182" y="778" class="num">6</text>
+
+  <!-- Legend block with Tailwind class suggestions for each element type -->
+  <rect x="110" y="1120" width="1520" height="520" rx="16" class="card shadow" />
+  <text x="140" y="1164" class="title">Design notes & Tailwind mapping</text>
+  <text x="160" y="1200" class="label">- TextInput / Textarea: <tspan class="muted">textarea h-24 rounded-md border px-4 py-3 text-sm</tspan></text>
+  <text x="160" y="1232" class="label">- Dropdown: <tspan class="muted">inline-flex items-center justify-between px-3 h-10 rounded-md border</tspan></text>
+  <text x="160" y="1264" class="label">- Provider Row: <tspan class="muted">flex items-center gap-4 p-3 border rounded-lg</tspan></text>
+  <text x="160" y="1296" class="label">- Primary button (Start): <tspan class="muted">bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-3 text-base font-semibold shadow</tspan></text>
+  <text x="160" y="1328" class="label">- Secondary buttons: <tspan class="muted">bg-white border text-sm rounded-md px-3 py-2</tspan></text>
+  <text x="160" y="1360" class="label">- Result Card: <tspan class="muted">bg-white border rounded-lg p-3 grid grid-cols-1 gap-2</tspan></text>
+  <text x="160" y="1392" class="label">- Touch target min: <tspan class="muted">min-w-[44px] min-h-[44px]</tspan></text>
+  <text x="160" y="1424" class="label">- Accessibility: <tspan class="muted">aria-live, aria-expanded, role=tablist for columns</tspan></text>
+  <text x="160" y="1456" class="label">- Apple-like: <tspan class="muted">large whitespace, subtle shadows, rounded corners, San Francisco/Inter-like font</tspan></text>
+
+  <!-- Footer -->
+  <rect x="0" y="1980" width="1600" height="220" fill="#eef2ff" />
+  <text x="80" y="2030" class="muted">High-fidelity annotated mock — shows dropdowns, per-row provider controls, prominent start button and numbered interactive positions (1..6)</text>
+</svg>

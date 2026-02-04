@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1500" viewBox="0 0 1100 1500">
+  <style>
+    .bg { fill: #f8fafc }
+    .header { fill:#eef2ff }
+    .card { fill:#fff; stroke:#e6eef6; }
+    .title { font-family:Inter, Helvetica, Arial; font-weight:700; fill:#0b1220; font-size:18px }
+    .muted { font-family:Inter, Helvetica, Arial; font-size:13px; fill:#475569 }
+    .small { font-family:Inter, Helvetica, Arial; font-size:12px; fill:#334155 }
+    .chip { fill:#f1f5f9; stroke:#e6eef6; rx:16 }
+    .seg { fill:#fff; stroke:#e6eef6; rx:6 }
+  </style>
+  <rect width="1100" height="1500" class="bg" />
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1100" height="64" class="header" />
+  <text x="20" y="40" class="title">TTS Compare</text>
+  <text x="980" y="40" class="small">Run ▶</text>
+
+  <!-- Top inline text input -->
+  <rect x="20" y="84" width="1060" height="72" rx="10" class="card" />
+  <text x="36" y="110" class="small">Text Input</text>
+  <rect x="36" y="116" width="820" height="40" rx="8" fill="#ffffff" stroke="#e6eef6" />
+  <text x="48" y="142" class="muted">Type or paste sample text…</text>
+
+  <!-- Providers: now vertical rows under the input, each row shows provider + model + quick controls -->
+  <text x="20" y="180" class="title">Providers</text>
+
+  <!-- Provider Row 1 -->
+  <rect x="20" y="200" width="1060" height="64" rx="8" class="card" />
+  <text x="40" y="230" class="small">Douyin · Volcano TTS</text>
+  <text x="860" y="230" class="small">[enabled]</text>
+  <text x="40" y="252" class="muted">Voice: Female Young · Latency: 120ms</text>
+  <rect x="980" y="212" width="80" height="36" rx="6" fill="#e0f2fe" stroke="#bae6fd" />
+  <text x="1000" y="236" class="small">Settings</text>
+
+  <!-- Provider Row 2 -->
+  <rect x="20" y="280" width="1060" height="64" rx="8" class="card" />
+  <text x="40" y="310" class="small">Minimax · speech-2.5-hd-preview</text>
+  <text x="860" y="310" class="small">[enabled]</text>
+  <text x="40" y="332" class="muted">Voice: Boyan · Size: 98KB</text>
+  <rect x="980" y="292" width="80" height="36" rx="6" class="seg" />
+  <text x="998" y="316" class="small">Settings</text>
+
+  <!-- Provider Row 3 -->
+  <rect x="20" y="360" width="1060" height="64" rx="8" class="card" />
+  <text x="40" y="390" class="small">ElevenLabs · multilingual_v2</text>
+  <text x="860" y="390" class="small">[disabled]</text>
+  <text x="40" y="412" class="muted">Voice: Rachel · Quality: High</text>
+  <rect x="980" y="372" width="80" height="36" rx="6" class="seg" />
+  <text x="998" y="396" class="small">Settings</text>
+
+  <!-- Quick actions row under providers -->
+  <g>
+    <rect x="36" y="444" width="180" height="36" rx="8" class="seg" />
+    <text x="64" y="470" class="small">Random sample</text>
+
+    <rect x="228" y="444" width="120" height="36" rx="8" class="seg" />
+    <text x="260" y="470" class="small">Clear</text>
+
+    <rect x="868" y="444" width="120" height="36" rx="8" fill="#e0f2fe" stroke="#bae6fd" />
+    <text x="900" y="470" class="small">Start</text>
+  </g>
+
+  <!-- Results header with columns control -->
+  <text x="20" y="520" class="title">Results</text>
+  <g>
+    <rect x="980" y="496" width="80" height="36" rx="8" class="seg" />
+    <text x="1000" y="520" class="small">Cols</text>
+    <!-- example segmented icons -->
+    <rect x="1062" y="500" width="24" height="28" rx="4" fill="#f1f5f9" stroke="#e6eef6" />
+    <rect x="1088" y="500" width="24" height="28" rx="4" fill="#fff" stroke="#e6eef6" />
+    <rect x="1114" y="500" width="24" height="28" rx="4" fill="#fff" stroke="#e6eef6" />
+  </g>
+
+  <!-- Results example rows under providers -->
+  <text x="20" y="560" class="small">1-column (mobile)</text>
+  <rect x="20" y="580" width="1060" height="120" rx="8" class="card" />
+  <text x="40" y="610" class="small">Douyin · Volcano TTS — Play ▸ 3.2s</text>
+
+  <text x="20" y="720" class="small">2-columns (tablet)</text>
+  <rect x="20" y="740" width="520" height="120" rx="8" class="card" />
+  <rect x="560" y="740" width="520" height="120" rx="8" class="card" />
+  <text x="40" y="770" class="small">Douyin · Volcano TTS</text>
+  <text x="580" y="770" class="small">Minimax · speech-2.5</text>
+
+  <text x="20" y="860" class="small">3-columns (desktop)</text>
+  <rect x="20" y="880" width="340" height="120" rx="8" class="card" />
+  <rect x="380" y="880" width="340" height="120" rx="8" class="card" />
+  <rect x="740" y="880" width="340" height="120" rx="8" class="card" />
+  <text x="40" y="910" class="small">Douyin · Volcano</text>
+  <text x="400" y="910" class="small">Minimax · speech-2.5</text>
+  <text x="760" y="910" class="small">ElevenLabs · multilingual</text>
+
+  <!-- Notes area: compact settings -->
+  <rect x="20" y="1000" width="1060" height="200" rx="8" class="card" />
+  <text x="40" y="1030" class="small">Notes / compact settings</text>
+  <text x="40" y="1058" class="muted">- Providers are shown per-row to surface model/voice/latency info.</text>
+  <text x="40" y="1080" class="muted">- For compactness, hide secondary metrics in multi-column mode; expand for details.</text>
+  <text x="40" y="1102" class="muted">- Touch targets kept >=44px</text>
+
+  <!-- Footer -->
+  <rect x="0" y="1400" width="1100" height="100" fill="#eef2ff" />
+  <text x="20" y="1436" class="small">One-provider-per-row chosen — clearer provider metadata</text>
+</svg>

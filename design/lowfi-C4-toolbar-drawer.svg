@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+  <title>Low‑fi C4 — Toolbar + Providers Drawer</title>
+  <defs>
+    <style>
+      .box{fill:#f7f7f7;stroke:#cfcfcf;stroke-width:2}
+      .muted{fill:#fbfbfb;stroke:#e5e5e5;stroke-width:2}
+      .label{font:14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill:#222}
+      .hint{font:12px system-ui; fill:#666}
+      .primary{fill:#e8f0ff;stroke:#6796ff;stroke-width:2}
+      .overlay{fill:rgba(0,0,0,0.06)}
+    </style>
+  </defs>
+
+  <!-- Toolbar -->
+  <rect class="box" x="24" y="24" width="1392" height="96" rx="10"/>
+  <text class="label" x="40" y="54">Toolbar</text>
+  <rect class="muted" x="40" y="56" width="860" height="44" rx="8"/>
+  <rect class="primary" x="910" y="56" width="140" height="44" rx="8"/>
+  <text class="label" x="946" y="84">Start ▶</text>
+  <rect class="muted" x="1062" y="56" width="160" height="44" rx="8"/>
+  <text class="hint" x="1078" y="84">Columns 1 • 2 • 3</text>
+  <rect class="muted" x="1226" y="56" width="190" height="44" rx="8"/>
+  <text class="hint" x="1242" y="84">Providers ▸ (opens drawer)</text>
+
+  <!-- Results area -->
+  <rect class="box" x="24" y="132" width="1392" height="868" rx="10"/>
+  <text class="label" x="40" y="162">Results — distraction‑free focus</text>
+  <g>
+    <rect class="box" x="40" y="186" width="420" height="220" rx="10"/>
+    <rect class="box" x="472" y="186" width="420" height="220" rx="10"/>
+    <rect class="box" x="904" y="186" width="420" height="220" rx="10"/>
+    <rect class="box" x="40" y="416" width="420" height="220" rx="10"/>
+    <rect class="box" x="472" y="416" width="420" height="220" rx="10"/>
+    <rect class="box" x="904" y="416" width="420" height="220" rx="10"/>
+  </g>
+
+  <!-- Drawer + overlay (illustrative) -->
+  <rect class="overlay" x="24" y="24" width="1392" height="976" rx="10"/>
+  <rect class="box" x="996" y="24" width="420" height="976" rx="0"/>
+  <text class="label" x="1012" y="54">Providers Drawer</text>
+  <rect class="muted" x="1012" y="70" width="392" height="40" rx="6"/>
+  <text class="hint" x="1026" y="96">Search / filters</text>
+  <rect class="muted" x="1012" y="118" width="392" height="56" rx="8"/>
+  <text class="hint" x="1026" y="150">Row: Provider A • toggle • settings</text>
+  <rect class="muted" x="1012" y="180" width="392" height="56" rx="8"/>
+  <text class="hint" x="1026" y="212">Row: Provider B • toggle • settings</text>
+  <rect class="muted" x="1012" y="242" width="392" height="56" rx="8"/>
+  <text class="hint" x="1026" y="274">Row: Provider C • toggle • settings</text>
+  <text class="hint" x="1012" y="952">Mobile: drawer as bottom sheet; ESC/overlay closes; trap focus</text>
+
+  <!-- Notes -->
+  <text class="hint" x="40" y="1000">Keeps canvas clean; Providers accessible on demand; great for demo/presentations</text>
+</svg>
+

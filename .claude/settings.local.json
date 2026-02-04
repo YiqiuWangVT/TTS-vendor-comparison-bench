@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "Bash(curl:*)",
+      "Bash(cat:*)",
+      "Bash(export:*)",
+      "Bash(pkill:*)",
+      "Bash(npm run dev)",
+      "Bash(find:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "outputStyle": "codex"
+}

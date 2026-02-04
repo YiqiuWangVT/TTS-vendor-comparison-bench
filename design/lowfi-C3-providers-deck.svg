@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+  <title>Low‑fi C3 — Providers Deck + Results</title>
+  <defs>
+    <style>
+      .box{fill:#f8f8f8;stroke:#d0d0d0;stroke-width:2}
+      .muted{fill:#fbfbfb;stroke:#e5e5e5;stroke-width:2}
+      .label{font:14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill:#222}
+      .hint{font:12px system-ui; fill:#666}
+      .primary{fill:#e8f0ff;stroke:#6796ff;stroke-width:2}
+    </style>
+  </defs>
+
+  <!-- Command bar -->
+  <rect class="box" x="24" y="24" width="1392" height="128" rx="10"/>
+  <text class="label" x="40" y="54">Command Bar</text>
+  <rect class="muted" x="40" y="68" width="980" height="44" rx="8"/>
+  <rect class="primary" x="1032" y="68" width="160" height="44" rx="8"/>
+  <text class="label" x="1066" y="96">Start ▶</text>
+  <rect class="muted" x="1208" y="68" width="208" height="44" rx="8"/>
+  <text class="hint" x="1224" y="96">Columns 1 • 2 • 3</text>
+
+  <!-- Providers deck (horiz scroll / wraps) -->
+  <rect class="box" x="24" y="164" width="1392" height="176" rx="10"/>
+  <text class="label" x="40" y="192">Providers Deck (rich cards • swipe on mobile)</text>
+  <g>
+    <rect class="muted" x="40" y="208" width="220" height="116" rx="10"/>
+    <text class="hint" x="56" y="232">Provider A</text>
+    <text class="hint" x="56" y="252">Model • Voice</text>
+    <text class="hint" x="56" y="272">Latency • Status</text>
+
+    <rect class="muted" x="270" y="208" width="220" height="116" rx="10"/>
+    <text class="hint" x="286" y="232">Provider B</text>
+    <text class="hint" x="286" y="252">Model • Voice</text>
+    <text class="hint" x="286" y="272">Latency • Status</text>
+
+    <rect class="muted" x="500" y="208" width="220" height="116" rx="10"/>
+    <text class="hint" x="516" y="232">Provider C</text>
+    <text class="hint" x="516" y="252">Model • Voice</text>
+    <text class="hint" x="516" y="272">Latency • Status</text>
+
+    <rect class="muted" x="730" y="208" width="220" height="116" rx="10"/>
+    <rect class="muted" x="960" y="208" width="220" height="116" rx="10"/>
+    <rect class="muted" x="1190" y="208" width="220" height="116" rx="10"/>
+  </g>
+  <text class="hint" x="40" y="344">Desktop: wraps to 2 rows if needed • Mobile: horizontal scroll</text>
+
+  <!-- Results header -->
+  <rect class="box" x="24" y="356" width="1392" height="50" rx="8"/>
+  <text class="label" x="40" y="386">Results Grid</text>
+
+  <!-- Results grid (2 cols depicted) -->
+  <g>
+    <!-- row 1 -->
+    <rect class="box" x="24" y="416" width="684" height="220" rx="10"/>
+    <text class="hint" x="40" y="444">Result</text>
+    <rect class="box" x="732" y="416" width="684" height="220" rx="10"/>
+    <text class="hint" x="748" y="444">Result</text>
+    <!-- row 2 -->
+    <rect class="box" x="24" y="646" width="684" height="220" rx="10"/>
+    <rect class="box" x="732" y="646" width="684" height="220" rx="10"/>
+    <!-- row 3 -->
+    <rect class="box" x="24" y="876" width="684" height="120" rx="10"/>
+    <rect class="box" x="732" y="876" width="684" height="120" rx="10"/>
+  </g>
+
+  <!-- Notes -->
+  <text class="hint" x="40" y="1004">Columns switch: 1/2/3; Audio lazy mount; Provider card toggles apply to run</text>
+</svg>
+

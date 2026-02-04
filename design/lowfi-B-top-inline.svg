@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1400" viewBox="0 0 1100 1400">
+  <style>
+    .bg { fill: #f8fafc }
+    .header { fill:#eef2ff }
+    .card { fill:#fff; stroke:#e6eef6; }
+    .title { font-family:Inter, Helvetica, Arial; font-weight:700; fill:#0b1220; font-size:18px }
+    .muted { font-family:Inter, Helvetica, Arial; font-size:13px; fill:#475569 }
+    .small { font-family:Inter, Helvetica, Arial; font-size:12px; fill:#334155 }
+    .chip { fill:#f1f5f9; stroke:#e6eef6; rx:16 }
+    .seg { fill:#fff; stroke:#e6eef6; rx:6 }
+  </style>
+  <rect width="1100" height="1400" class="bg" />
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1100" height="64" class="header" />
+  <text x="20" y="40" class="title">TTS Compare</text>
+  <text x="980" y="40" class="small">Run ▶</text>
+
+  <!-- Top inline controls: Text input (left) + Providers (right, inline) -->
+  <rect x="20" y="84" width="1060" height="96" rx="10" class="card" />
+  <text x="36" y="110" class="small">Text Input</text>
+  <rect x="36" y="120" width="680" height="44" rx="8" fill="#ffffff" stroke="#e6eef6" />
+  <text x="48" y="148" class="muted">Type or paste sample text…</text>
+
+  <!-- Providers inline to the right of input -->
+  <text x="740" y="110" class="small">Providers</text>
+  <g>
+    <rect x="740" y="120" width="72" height="32" rx="16" class="chip" />
+    <text x="754" y="142" class="small">Douyin</text>
+    <rect x="820" y="120" width="84" height="32" rx="16" class="chip" />
+    <text x="836" y="142" class="small">Minimax</text>
+    <rect x="908" y="120" width="112" height="32" rx="16" class="chip" />
+    <text x="928" y="142" class="small">ElevenLabs</text>
+  </g>
+
+  <!-- Quick actions row under input -->
+  <g>
+    <rect x="36" y="196" width="180" height="36" rx="8" class="seg" />
+    <text x="64" y="222" class="small">Random sample</text>
+
+    <rect x="228" y="196" width="120" height="36" rx="8" class="seg" />
+    <text x="260" y="222" class="small">Clear</text>
+
+    <rect x="868" y="196" width="120" height="36" rx="8" fill="#e0f2fe" stroke="#bae6fd" />
+    <text x="900" y="222" class="small">Start</text>
+  </g>
+
+  <!-- Results header with columns control -->
+  <text x="20" y="270" class="title">Results</text>
+  <g>
+    <rect x="980" y="246" width="80" height="36" rx="8" class="seg" />
+    <text x="1000" y="270" class="small">Cols</text>
+    <!-- example segmented icons -->
+    <rect x="1062" y="250" width="24" height="28" rx="4" fill="#f1f5f9" stroke="#e6eef6" />
+    <rect x="1088" y="250" width="24" height="28" rx="4" fill="#fff" stroke="#e6eef6" />
+    <rect x="1114" y="250" width="24" height="28" rx="4" fill="#fff" stroke="#e6eef6" />
+  </g>
+
+  <!-- Results area: show three sample rows demonstrating 1/2/3 columns variants -->
+  <!-- Row A: 1-column (mobile view) -->
+  <text x="20" y="310" class="small">1-column (mobile)</text>
+  <rect x="20" y="330" width="1060" height="120" rx="8" class="card" />
+  <text x="40" y="360" class="small">Provider A — Model X</text>
+  <text x="40" y="386" class="muted">Play ▸ &nbsp; Duration: 3.2s &nbsp; Size: 120KB</text>
+
+  <!-- Row B: 2-columns (tablet) -->
+  <text x="20" y="470" class="small">2-columns (tablet)</text>
+  <rect x="20" y="490" width="520" height="120" rx="8" class="card" />
+  <rect x="560" y="490" width="520" height="120" rx="8" class="card" />
+  <text x="40" y="520" class="small">Provider A — Model X</text>
+  <text x="580" y="520" class="small">Provider B — Model Y</text>
+  <text x="40" y="548" class="muted">Play ▸ &nbsp; 3.2s</text>
+  <text x="580" y="548" class="muted">Play ▸ &nbsp; 2.9s</text>
+
+  <!-- Row C: 3-columns (desktop) -->
+  <text x="20" y="640" class="small">3-columns (desktop)</text>
+  <rect x="20" y="660" width="340" height="120" rx="8" class="card" />
+  <rect x="380" y="660" width="340" height="120" rx="8" class="card" />
+  <rect x="740" y="660" width="340" height="120" rx="8" class="card" />
+  <text x="40" y="690" class="small">A · Model X</text>
+  <text x="400" y="690" class="small">B · Model Y</text>
+  <text x="760" y="690" class="small">C · Model Z</text>
+  <text x="40" y="718" class="muted">Play ▸ &nbsp; 3.2s &nbsp; Latency: 120ms</text>
+
+  <!-- Notes area: compact settings -->
+  <rect x="20" y="820" width="1060" height="160" rx="8" class="card" />
+  <text x="40" y="850" class="small">Notes / compact settings</text>
+  <text x="40" y="878" class="muted">- In 2/3-col modes, hide less important metrics; show details on expand</text>
+  <text x="40" y="900" class="muted">- Touch targets kept >=44px</text>
+
+  <!-- Footer -->
+  <rect x="0" y="1300" width="1100" height="100" fill="#eef2ff" />
+  <text x="20" y="1336" class="small">Compact mode suggested · toggle in header</text>
+</svg>

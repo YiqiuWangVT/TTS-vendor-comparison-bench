@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1280" viewBox="0 0 1440 1280">
+  <title>Hi‑fi v2 — C3 Providers Rows (Desktop • Tailwind Marketing Style)</title>
+  <defs>
+    <!-- Tailwind-esque tokens -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="btn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0B1220" flood-opacity="0.06"/>
+    </filter>
+    <style>
+      .bg{fill:url(#bgGrad)}
+      .card{fill:#FFFFFF;stroke:#E5E7EB;stroke-width:1;filter:url(#shadowSoft)} /* ring-1 ring-gray-200 shadow */
+      .surface{fill:#FFFFFF;stroke:#E5E7EB}
+      .muted{fill:#F9FAFB;stroke:#E5E7EB}
+      .ring{fill:#FFFFFF;stroke:#E5E7EB}
+      .text{font:14px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; fill:#0B1220}
+      .hint{font:12px Inter; fill:#64748B}
+      .title{font:600 20px Inter; fill:#0B1220}
+      .btnText{font:600 16px Inter; fill:#FFFFFF}
+      .caret{fill:#64748B}
+      .seg{fill:#F3F4F6;stroke:#E5E7EB}
+      .segActive{fill:#FFFFFF;stroke:#2563EB}
+      .chk{fill:#FFFFFF;stroke:#D1D5DB}
+      .chkOn{fill:#2563EB}
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1440" height="1280"/>
+
+  <!-- Top heading / subtle container max-w-7xl feel -->
+  <g transform="translate(24,24)">
+    <text class="title" x="0" y="0">TTS 供应商对比</text>
+    <text class="hint" x="0" y="24">Tailwind UI Blocks • Marketing 风格（干净、明确、高级）</text>
+  </g>
+
+  <!-- 1) 输入 -->
+  <g transform="translate(24,64)">
+    <rect class="card" x="0" y="0" width="1392" height="136" rx="16"/>
+    <text class="title" x="20" y="36">输入</text>
+    <rect class="ring" x="20" y="52" width="900" height="64" rx="12"/>
+    <text class="hint" x="36" y="90">输入文字…</text>
+    <!-- Random icon button (Tailwind icon button style) -->
+    <g transform="translate(932,52)">
+      <rect x="0" y="0" width="64" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+      <path d="M20 38a12 12 0 1 1 6-22" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+      <path d="M26 14h10v10" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+    </g>
+    <!-- Select text dropdown -->
+    <rect class="ring" x="1006" y="52" width="304" height="64" rx="12"/>
+    <text class="text" x="1026" y="90">选择文字</text>
+    <polygon class="caret" points="1278,82 1290,82 1284,92"/>
+  </g>
+
+  <!-- 2) 选择（每行一个供应商） -->
+  <g transform="translate(24,220)">
+    <rect class="card" x="0" y="0" width="1392" height="260" rx="16"/>
+    <text class="title" x="20" y="36">选择</text>
+    <!-- global dropdowns -->
+    <rect class="ring" x="20" y="56" width="280" height="40" rx="10"/>
+    <text class="text" x="40" y="82">模型供应商（多选）</text>
+    <polygon class="caret" points="282,72 294,72 288,80"/>
+    <rect class="ring" x="312" y="56" width="280" height="40" rx="10"/>
+    <text class="text" x="332" y="82">模型</text>
+    <polygon class="caret" points="574,72 586,72 580,80"/>
+    <rect class="ring" x="604" y="56" width="280" height="40" rx="10"/>
+    <text class="text" x="624" y="82">音色</text>
+    <polygon class="caret" points="866,72 878,72 872,80"/>
+    <text class="hint" x="20" y="110">每行一个供应商：选择框 • 供应商 • 模型 • 音色</text>
+
+    <!-- rows -->
+    <g transform="translate(20,122)">
+      <!-- A -->
+      <g>
+        <rect class="surface" x="0" y="0" width="1352" height="40" rx="10"/>
+        <rect class="chk" x="12" y="10" width="20" height="20" rx="4"/>
+        <rect class="chkOn" x="16" y="14" width="12" height="12" rx="2"/>
+        <text class="text" x="44" y="26">Provider A</text>
+        <rect class="ring" x="220" y="8" width="280" height="24" rx="8"/>
+        <text class="hint" x="232" y="24">模型</text>
+        <polygon class="caret" points="484,18 496,18 490,26"/>
+        <rect class="ring" x="516" y="8" width="280" height="24" rx="8"/>
+        <text class="hint" x="528" y="24">音色</text>
+        <polygon class="caret" points="780,18 792,18 786,26"/>
+      </g>
+      <!-- B -->
+      <g transform="translate(0,44)">
+        <rect class="surface" x="0" y="0" width="1352" height="40" rx="10"/>
+        <rect class="chk" x="12" y="10" width="20" height="20" rx="4"/>
+        <text class="text" x="44" y="26">Provider B</text>
+        <rect class="ring" x="220" y="8" width="280" height="24" rx="8"/>
+        <text class="hint" x="232" y="24">模型</text>
+        <polygon class="caret" points="484,18 496,18 490,26"/>
+        <rect class="ring" x="516" y="8" width="280" height="24" rx="8"/>
+        <text class="hint" x="528" y="24">音色</text>
+        <polygon class="caret" points="780,18 792,18 786,26"/>
+      </g>
+      <!-- C -->
+      <g transform="translate(0,88)">
+        <rect class="surface" x="0" y="0" width="1352" height="40" rx="10"/>
+        <rect class="chk" x="12" y="10" width="20" height="20" rx="4"/>
+        <text class="text" x="44" y="26">Provider C</text>
+        <rect class="ring" x="220" y="8" width="280" height="24" rx="8"/>
+        <text class="hint" x="232" y="24">模型</text>
+        <polygon class="caret" points="484,18 496,18 490,26"/>
+        <rect class="ring" x="516" y="8" width="280" height="24" rx="8"/>
+        <text class="hint" x="528" y="24">音色</text>
+        <polygon class="caret" points="780,18 792,18 786,26"/>
+      </g>
+      <!-- D -->
+      <g transform="translate(0,132)">
+        <rect class="surface" x="0" y="0" width="1352" height="40" rx="10"/>
+        <rect class="chk" x="12" y="10" width="20" height="20" rx="4"/>
+        <text class="text" x="44" y="26">Provider D</text>
+        <rect class="ring" x="220" y="8" width="280" height="24" rx="8"/>
+        <text class="hint" x="232" y="24">模型</text>
+        <polygon class="caret" points="484,18 496,18 490,26"/>
+        <rect class="ring" x="516" y="8" width="280" height="24" rx="8"/>
+        <text class="hint" x="528" y="24">音色</text>
+        <polygon class="caret" points="780,18 792,18 786,26"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 3) 开始比较 + 列数 -->
+  <g transform="translate(24,500)">
+    <rect class="card" x="0" y="0" width="1392" height="92" rx="16"/>
+    <g transform="translate(20,18)">
+      <rect x="0" y="0" width="188" height="56" rx="14" fill="url(#btn)"/>
+      <text class="btnText" x="28" y="36">开始比较 ▶</text>
+    </g>
+    <g transform="translate(220,18)">
+      <rect class="seg" x="0" y="0" width="216" height="56" rx="14"/>
+      <rect class="segActive" x="4" y="4" width="68" height="48" rx="12"/>
+      <text class="text" x="30" y="34">1</text>
+      <text class="text" x="102" y="34">2</text>
+      <text class="text" x="174" y="34">3</text>
+    </g>
+    <text class="hint" x="456" y="54">结果每行列数</text>
+  </g>
+
+  <!-- 4) 结果 -->
+  <g transform="translate(24,608)">
+    <text class="title" x="0" y="0">结果</text>
+    <g transform="translate(0,14)">
+      <!-- three columns row -->
+      <g>
+        <rect class="card" x="0" y="0" width="440" height="220" rx="16"/>
+        <text class="text" x="20" y="32">Provider A</text>
+        <rect class="muted" x="20" y="48" width="400" height="56" rx="12"/>
+        <text class="hint" x="36" y="82">波形 / 占位</text>
+        <text class="hint" x="20" y="124">时长 2.3s • 95ms</text>
+        <rect class="ring" x="20" y="146" width="96" height="36" rx="10"/>
+        <text class="hint" x="48" y="168">播放</text>
+        <rect class="ring" x="124" y="146" width="96" height="36" rx="10"/>
+        <text class="hint" x="144" y="168">下载</text>
+      </g>
+      <g transform="translate(476,0)">
+        <rect class="card" x="0" y="0" width="440" height="220" rx="16"/>
+        <text class="text" x="20" y="32">Provider B</text>
+        <rect class="muted" x="20" y="48" width="400" height="56" rx="12"/>
+        <text class="hint" x="36" y="82">波形 / 占位</text>
+        <text class="hint" x="20" y="124">时长 2.1s • 110ms</text>
+        <rect class="ring" x="20" y="146" width="96" height="36" rx="10"/>
+        <text class="hint" x="48" y="168">播放</text>
+        <rect class="ring" x="124" y="146" width="96" height="36" rx="10"/>
+        <text class="hint" x="144" y="168">下载</text>
+      </g>
+      <g transform="translate(952,0)">
+        <rect class="card" x="0" y="0" width="440" height="220" rx="16"/>
+        <text class="text" x="20" y="32">Provider C</text>
+        <rect class="muted" x="20" y="48" width="400" height="56" rx="12"/>
+        <text class="hint" x="36" y="82">波形 / 占位</text>
+        <text class="hint" x="20" y="124">时长 2.0s • 87ms</text>
+        <rect class="ring" x="20" y="146" width="96" height="36" rx="10"/>
+        <text class="hint" x="48" y="168">播放</text>
+        <rect class="ring" x="124" y="146" width="96" height="36" rx="10"/>
+        <text class="hint" x="144" y="168">下载</text>
+      </g>
+      <!-- second row (D) -->
+      <g transform="translate(0,248)">
+        <rect class="card" x="0" y="0" width="440" height="220" rx="16"/>
+        <text class="text" x="20" y="32">Provider D</text>
+        <rect class="muted" x="20" y="48" width="400" height="56" rx="12"/>
+        <text class="hint" x="36" y="82">波形 / 占位</text>
+        <text class="hint" x="20" y="124">时长 2.4s • 102ms</text>
+        <rect class="ring" x="20" y="146" width="96" height="36" rx="10"/>
+        <text class="hint" x="48" y="168">播放</text>
+        <rect class="ring" x="124" y="146" width="96" height="36" rx="10"/>
+        <text class="hint" x="144" y="168">下载</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 5) 参数汇总（下移，避免重叠） -->
+  <g transform="translate(24,1088)">
+    <rect class="card" x="0" y="0" width="1392" height="188" rx="16"/>
+    <text class="title" x="20" y="36">参数比较汇总</text>
+    <g transform="translate(20,50)">
+      <rect class="muted" x="0" y="0" width="200" height="36" rx="10"/>
+      <text class="text" x="16" y="24">指标</text>
+      <rect class="muted" x="208" y="0" width="288" height="36" rx="10"/>
+      <text class="text" x="224" y="24">Provider A</text>
+      <rect class="muted" x="504" y="0" width="288" height="36" rx="10"/>
+      <text class="text" x="520" y="24">Provider B</text>
+      <rect class="muted" x="800" y="0" width="288" height="36" rx="10"/>
+      <text class="text" x="816" y="24">Provider C</text>
+      <rect class="muted" x="1096" y="0" width="288" height="36" rx="10"/>
+      <text class="text" x="1112" y="24">Provider D</text>
+      <!-- rows -->
+      <g transform="translate(0,44)">
+        <rect class="ring" x="0" y="0" width="200" height="32" rx="8"/>
+        <text class="hint" x="16" y="22">时延 (ms)</text>
+        <text class="text" x="224" y="22">95</text>
+        <text class="text" x="520" y="22">110</text>
+        <text class="text" x="816" y="22">87</text>
+        <text class="text" x="1112" y="22">102</text>
+      </g>
+      <g transform="translate(0,80)">
+        <rect class="ring" x="0" y="0" width="200" height="32" rx="8"/>
+        <text class="hint" x="16" y="22">音频大小 (KB)</text>
+        <text class="text" x="224" y="22">320</text>
+        <text class="text" x="520" y="22">298</text>
+        <text class="text" x="816" y="22">305</text>
+        <text class="text" x="1112" y="22">334</text>
+      </g>
+    </g>
+  </g>
+
+</svg>
+

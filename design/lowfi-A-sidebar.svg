@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <style>
+    .bg { fill: #0f172a; }
+    .panel { fill: #ffffff; stroke: #e5e7eb; stroke-width:1; }
+    .muted { fill:#94a3b8; font-family:Inter, Helvetica, Arial; }
+    .label { fill:#0b1220; font-family:Inter, Helvetica, Arial; font-weight:600 }
+    .small { font-size:12px; fill:#0b1220 }
+  </style>
+  <rect width="1200" height="800" fill="#f8fafc"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="64" rx="0" class="panel" fill="#f1f5f9" />
+  <text x="20" y="40" class="label">Logo · TTS comparison</text>
+  <text x="1020" y="40" class="small">Run ▶</text>
+
+  <!-- Sidebar -->
+  <rect x="20" y="84" width="320" height="600" rx="8" class="panel" />
+  <text x="36" y="110" class="label">Configuration</text>
+
+  <!-- Text input -->
+  <rect x="36" y="126" width="272" height="120" rx="6" fill="#ffffff" stroke="#e6eef6" />
+  <text x="44" y="150" class="small">Text input (min-h)</text>
+  <rect x="44" y="190" width="80" height="28" rx="4" fill="#eef2ff" />
+  <text x="52" y="210" class="small">Random</text>
+
+  <!-- Providers -->
+  <text x="36" y="262" class="label">Providers</text>
+  <rect x="36" y="274" width="272" height="140" rx="6" fill="#fff" stroke="#e6eef6" />
+  <text x="44" y="296" class="small">[ ] Douyin</text>
+  <text x="44" y="320" class="small">[ ] Minimax</text>
+  <text x="44" y="344" class="small">[ ] ElevenLabs</text>
+
+  <!-- Actions compact -->
+  <rect x="36" y="430" width="272" height="44" rx="6" fill="#fff" stroke="#e6eef6" />
+  <text x="56" y="458" class="small">Start Comparison</text>
+
+  <!-- Main area -->
+  <rect x="360" y="84" width="820" height="600" rx="8" class="panel" />
+  <text x="376" y="110" class="label">Results / Playback</text>
+
+  <!-- Results grid sample -->
+  <g>
+    <rect x="376" y="126" width="240" height="120" rx="8" fill="#ffffff" stroke="#e6eef6" />
+    <rect x="632" y="126" width="240" height="120" rx="8" fill="#ffffff" stroke="#e6eef6" />
+    <rect x="888" y="126" width="240" height="120" rx="8" fill="#ffffff" stroke="#e6eef6" />
+
+    <rect x="376" y="258" width="240" height="120" rx="8" fill="#ffffff" stroke="#e6eef6" />
+    <rect x="632" y="258" width="240" height="120" rx="8" fill="#ffffff" stroke="#e6eef6" />
+    <rect x="888" y="258" width="240" height="120" rx="8" fill="#ffffff" stroke="#e6eef6" />
+
+    <text x="392" y="150" class="small">Provider A</text>
+    <text x="648" y="150" class="small">Provider B</text>
+    <text x="904" y="150" class="small">Provider C</text>
+  </g>
+
+  <!-- Footer -->
+  <rect x="0" y="700" width="1200" height="100" fill="#f1f5f9" />
+  <text x="20" y="740" class="small muted">Status: ready · comparing 0 providers</text>
+</svg>

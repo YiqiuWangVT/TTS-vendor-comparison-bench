@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+  <title>Low‑fi C1 — Command Bar + Sticky Rail</title>
+  <defs>
+    <style>
+      .box{fill:#f7f7f7;stroke:#cfcfcf;stroke-width:2}
+      .muted{fill:#fafafa;stroke:#e3e3e3;stroke-width:2}
+      .label{font:14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill:#333}
+      .hint{font:12px system-ui; fill:#666}
+      .primary{fill:#e8f0ff;stroke:#6796ff;stroke-width:2}
+    </style>
+  </defs>
+  <!-- Left sticky rail (desktop) -->
+  <rect class="box" x="24" y="24" width="220" height="976" rx="8"/>
+  <text class="label" x="38" y="56">Sticky Rail — Providers / Filters</text>
+  <rect class="muted" x="38" y="72" width="192" height="40" rx="6"/>
+  <text class="hint" x="48" y="97">Search providers…</text>
+  <rect class="muted" x="38" y="124" width="192" height="36" rx="6"/>
+  <text class="hint" x="48" y="147">Provider A • latency 120ms</text>
+  <rect class="muted" x="38" y="164" width="192" height="36" rx="6"/>
+  <text class="hint" x="48" y="187">Provider B • latency 95ms</text>
+  <rect class="muted" x="38" y="204" width="192" height="36" rx="6"/>
+  <text class="hint" x="48" y="227">Provider C • latency 140ms</text>
+  <text class="hint" x="38" y="262">Sticky on scroll • collapses on mobile</text>
+
+  <!-- Main area -->
+  <rect class="box" x="260" y="24" width="1156" height="160" rx="10"/>
+  <text class="label" x="280" y="54">Command Bar</text>
+  <!-- Text input -->
+  <rect class="muted" x="280" y="70" width="720" height="56" rx="8"/>
+  <text class="hint" x="296" y="100">Enter text to synthesize…</text>
+  <!-- Start button -->
+  <rect class="primary" x="1012" y="70" width="160" height="56" rx="10"/>
+  <text class="label" x="1048" y="104">Start ▶</text>
+  <!-- Columns control -->
+  <rect class="muted" x="1184" y="70" width="212" height="56" rx="8"/>
+  <text class="hint" x="1198" y="100">Columns: 1 • 2 • 3</text>
+  <!-- Inline chips row -->
+  <rect class="muted" x="280" y="132" width="1116" height="36" rx="8"/>
+  <text class="hint" x="296" y="154">Quick toggles: Language • Voice • Speed • Pitch • Random</text>
+
+  <!-- Results header -->
+  <rect class="box" x="260" y="198" width="1156" height="50" rx="8"/>
+  <text class="label" x="280" y="228">Results — responsive grid (1/2/3)</text>
+  <text class="hint" x="1080" y="228">aria-live, skeletons, lazy audio</text>
+
+  <!-- Results grid (3 cols) -->
+  <g>
+    <!-- row 1 -->
+    <rect class="box" x="260" y="256" width="368" height="220" rx="10"/>
+    <text class="hint" x="276" y="284">Result Card</text>
+    <rect class="box" x="640" y="256" width="368" height="220" rx="10"/>
+    <text class="hint" x="656" y="284">Result Card</text>
+    <rect class="box" x="1020" y="256" width="368" height="220" rx="10"/>
+    <text class="hint" x="1036" y="284">Result Card</text>
+    <!-- row 2 -->
+    <rect class="box" x="260" y="488" width="368" height="220" rx="10"/>
+    <rect class="box" x="640" y="488" width="368" height="220" rx="10"/>
+    <rect class="box" x="1020" y="488" width="368" height="220" rx="10"/>
+    <!-- row 3 -->
+    <rect class="box" x="260" y="720" width="368" height="220" rx="10"/>
+    <rect class="box" x="640" y="720" width="368" height="220" rx="10"/>
+    <rect class="box" x="1020" y="720" width="368" height="220" rx="10"/>
+  </g>
+
+  <!-- Notes -->
+  <text class="hint" x="280" y="960">Desktop: left rail visible • Mobile: rail collapses into top accordion</text>
+</svg>
+

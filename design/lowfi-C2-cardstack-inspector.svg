@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+  <title>Low‑fi C2 — Card Stack + Inline Inspector</title>
+  <defs>
+    <style>
+      .box{fill:#f8f8f8;stroke:#d0d0d0;stroke-width:2}
+      .muted{fill:#fbfbfb;stroke:#e5e5e5;stroke-width:2}
+      .label{font:14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill:#222}
+      .hint{font:12px system-ui; fill:#666}
+      .primary{fill:#e8f0ff;stroke:#6796ff;stroke-width:2}
+      .accent{fill:#fff7e6;stroke:#ffc266;stroke-width:2}
+    </style>
+  </defs>
+
+  <!-- Top command area (no side rail) -->
+  <rect class="box" x="24" y="24" width="1392" height="160" rx="10"/>
+  <text class="label" x="40" y="54">Command Bar</text>
+  <rect class="muted" x="40" y="70" width="920" height="56" rx="8"/>
+  <text class="hint" x="56" y="100">Text input…</text>
+  <rect class="primary" x="972" y="70" width="160" height="56" rx="10"/>
+  <text class="label" x="1008" y="104">Start ▶</text>
+  <rect class="muted" x="1144" y="70" width="256" height="56" rx="8"/>
+  <text class="hint" x="1160" y="100">Columns control + density</text>
+  <rect class="muted" x="40" y="132" width="1360" height="36" rx="8"/>
+  <text class="hint" x="56" y="154">Chips: Language • Voice • Speed • Random • Clear</text>
+
+  <!-- Results header -->
+  <rect class="box" x="24" y="198" width="1392" height="50" rx="8"/>
+  <text class="label" x="40" y="228">Results (Card Stack w/ Inline Inspector)</text>
+  <text class="hint" x="1120" y="228">Inspector expands within flow</text>
+
+  <!-- Card stack -->
+  <rect class="box" x="24" y="256" width="1392" height="140" rx="10"/>
+  <text class="hint" x="40" y="284">Result Card</text>
+
+  <!-- Expanded inspector card -->
+  <rect class="accent" x="24" y="406" width="1392" height="260" rx="10"/>
+  <text class="label" x="40" y="436">Expanded Inspector (waveform • transcript • metrics • actions)</text>
+  <rect class="muted" x="40" y="458" width="840" height="80" rx="8"/>
+  <text class="hint" x="56" y="500">Waveform placeholder</text>
+  <rect class="muted" x="40" y="548" width="840" height="68" rx="8"/>
+  <text class="hint" x="56" y="590">Transcript preview…</text>
+  <rect class="muted" x="896" y="458" width="500" height="158" rx="8"/>
+  <text class="hint" x="912" y="486">Metrics: latency, size, model, voice…</text>
+  <rect class="primary" x="896" y="624" width="140" height="40" rx="8"/>
+  <text class="label" x="934" y="652">Play</text>
+  <rect class="muted" x="1046" y="624" width="140" height="40" rx="8"/>
+  <text class="hint" x="1080" y="652">Download</text>
+
+  <!-- More cards below -->
+  <rect class="box" x="24" y="676" width="1392" height="140" rx="10"/>
+  <rect class="box" x="24" y="826" width="1392" height="140" rx="10"/>
+
+  <!-- Notes -->
+  <text class="hint" x="40" y="988">Mobile: single column; Desktop: column count applies to collapsed cards; inspector always full width</text>
+</svg>
+
