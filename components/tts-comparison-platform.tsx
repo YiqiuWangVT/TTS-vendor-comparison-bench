@@ -82,6 +82,51 @@ export function TTSComparisonPlatform() {
     setConfig((prev) => (prev.language === mapped ? prev : { ...prev, language: mapped }))
   }, [language])
 
+  // 初始化：清空 sessionStorage 中的旧音频
+  useEffect(() => {
+    sessionStorage.removeItem('tts-generated-audios')
+  }, [])
+
+  // 当所有音频生成完成时，保存到 sessionStorage
+  const previousRunningRef = useRef(false)
+  useEffect(() => {
+    console.log('[TTS] useEffect 触发', { isRunning, prevRunning: previousRunningRef.current, resultsCount: results.length })
+
+    // 只在 isRunning 从 true 变为 false 时保存
+    if (previousRunningRef.current && !isRunning && results.length > 0) {
+      const successfulResults = results.filter(r => r.status === 'success' && r.audioUrl)
+
+      console.log('[TTS] 准备保存音频到 sessionStorage，共', successfulResults.length, '条')
+
+      if (successfulResults.length > 0) {
+        const audios = successfulResults.map(r => ({
+          id: r.configId || r.provider,
+          provider: r.provider,
+          audioUrl: r.audioUrl,
+          audioMimeType: r.audioMimeType,
+          text: config.text,
+          metadata: {
+            voice: r.configLabel,
+            model: r.configId
+          }
+        }))
+
+        try {
+          sessionStorage.setItem('tts-generated-audios', JSON.stringify(audios))
+          console.log(`[TTS] 已保存 ${audios.length} 条音频到 sessionStorage`)
+        } catch (error) {
+          console.error('[TTS] 保存音频失败:', error)
+        }
+        if (audios.length > 0) {
+          const totalSize = audios.reduce((sum, a) => sum + a.audioUrl.length, 0)
+          console.warn('[TTS] 音频数据太大，sessionStorage 容量限制约 5MB，当前:', (totalSize / 1024 / 1024).toFixed(2), 'MB')
+        }
+      }
+    }
+
+    previousRunningRef.current = isRunning
+  }, [isRunning, results, config.text])
+
   const triggerSpotlight = useCallback(
     (section: "panel" | "results", duration = 1200) => {
       setSpotlight(section)
@@ -214,7 +259,7 @@ export function TTSComparisonPlatform() {
                       </>
                     )}
                   </Button>
-                
+
                 </div>
 
                 {/* show last run label under hero for context */}
