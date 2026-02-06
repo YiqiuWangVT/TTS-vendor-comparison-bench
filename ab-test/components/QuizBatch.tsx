@@ -5,7 +5,7 @@
 
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Question, Answer, AnswerValue } from '../types'
 import { QuestionCard } from './QuestionCard'
 
@@ -19,6 +19,12 @@ interface QuizBatchProps {
 export function QuizBatch({ questions, batchIndex, onSubmit, canContinue }: QuizBatchProps) {
   const [answers, setAnswers] = useState<Map<string, AnswerValue>>(new Map())
   const [submitted, setSubmitted] = useState(false)
+
+  // 当题目变化时重置状态
+  useEffect(() => {
+    setAnswers(new Map())
+    setSubmitted(false)
+  }, [questions])
 
   const handleAnswer = (questionId: string, value: AnswerValue) => {
     const newAnswers = new Map(answers)

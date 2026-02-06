@@ -1,25 +1,21 @@
 "use client"
 
 import { useState } from "react"
-import { TTSComparisonPlatform } from "@/components/tts-comparison-platform"
 
 // AB 测试相关导入（从 ab-test 文件夹）
 import { useABTest } from "../../ab-test/hooks/use-ab-test"
 import { QuizBatch } from "../../ab-test/components/QuizBatch"
 import { ProgressTracker } from "../../ab-test/components/ProgressTracker"
-import type { AudioInfo, Answer } from "../../ab-test/types"
+import type { Answer } from "../../ab-test/types"
 
 // 测试阶段
 type TestPhase = 'tts' | 'testing' | 'results'
 
 export function ABTestSection() {
   const [phase, setPhase] = useState<TestPhase>('tts')
-  const [availableAudios, setAvailableAudios] = useState<AudioInfo[]>([])
 
   // AB 测试 hook
   const {
-    bank,
-    answers,
     progress,
     startTest,
     submitBatch,
@@ -34,8 +30,7 @@ export function ABTestSection() {
       const stored = sessionStorage.getItem('tts-generated-audios')
       console.log('[AB-Test] sessionStorage 内容:', stored ? stored.substring(0, 100) : 'null')
       if (stored) {
-        const audios = JSON.parse(stored) as AudioInfo[]
-        setAvailableAudios(audios)
+        const audios = JSON.parse(stored)
         // 默认全选，直接开始测试
         if (audios.length >= 2) {
           startTest(audios)
@@ -50,12 +45,23 @@ export function ABTestSection() {
     }
   }
 
+  // 处理提交答案
+  const handleSubmitBatch = (newAnswers: Answer[]) => {
+    const result = submitBatch(newAnswers)
+
+    // 延迟后检查是否还有下一批
+    setTimeout(() => {
+      if (!result.hasNext) {
+        setPhase('results')
+      }
+    }, 1500)
+  }
+
   // 处理重置
   const handleReset = () => {
     if (confirm('确定要重置测试吗？所有进度将丢失。')) {
       resetTest()
       setPhase('tts')
-      setAvailableAudios([])
     }
   }
 
@@ -70,9 +76,6 @@ export function ABTestSection() {
     a.click()
     URL.revokeObjectURL(url)
   }
-
-  // 检查是否完成
-  const isCompleted = progress && progress.completedQuestions >= progress.totalQuestions
 
   return (
     <div className="border-t border-white/10 bg-gradient-to-b from-slate-950 to-slate-900">
@@ -101,14 +104,13 @@ export function ABTestSection() {
           </button>
         </div>
 
-        {/* 阶段 1：无，直接进入测试 */}
         {/* 阶段 2：答题 */}
         {phase === 'testing' && progress?.currentBatch && progress.currentBatch.length > 0 && (
           <div className="space-y-6">
             <QuizBatch
               questions={progress.currentBatch}
               batchIndex={progress.batchIndex}
-              onSubmit={submitBatch}
+              onSubmit={handleSubmitBatch}
               canContinue={progress.completedQuestions < progress.totalQuestions}
             />
           </div>

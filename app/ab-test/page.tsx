@@ -31,7 +31,6 @@ export default function ABTestPage() {
   const {
     progress,
     startTest,
-    getNextBatch,
     submitBatch,
     resetTest,
     exportResults
@@ -78,15 +77,16 @@ export default function ABTestPage() {
     }
     startTest(audios)
     setPhase('testing')
-    getNextBatch()
+    // 无需调用 getNextBatch，startTest 已经设置了初始进度
   }
 
   // 处理提交答案
   const handleSubmitBatch = (newAnswers: Answer[]) => {
-    submitBatch(newAnswers)
+    const result = submitBatch(newAnswers)
+
+    // 延迟后检查是否还有下一批
     setTimeout(() => {
-      const hasNext = getNextBatch()
-      if (!hasNext) {
+      if (!result.hasNext) {
         setPhase('results')
       }
     }, 1500)
